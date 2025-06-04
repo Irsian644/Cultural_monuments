@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kulturdenkmäler - Deutschland & Albanien</title>
+    <style>
+        /* Add these styles inline to ensure images work properly */
+        .monument-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .monument-image:hover {
+            transform: scale(1.05);
+        }
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.pexels.com/photos/2570063/pexels-photo-2570063.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">🏛️ Kulturerbe</div>
+        <div class="nav-links">
+            <a href="#home">Startseite</a>
+            <a href="#monuments">Denkmäler</a>
+            <a href="#quiz">Quiz</a>
+            <a href="#compare">Vergleich</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Kulturdenkmäler</h1>
+            <h2>Deutschland & Albanien</h2>
+            <p>Entdecken Sie das reiche kulturelle Erbe zweier einzigartiger europäischer Nationen</p>
+            <button class="cta-button">Entdecken Sie mehr</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="monuments" class="monuments-section">
+            <h2>Bedeutende Denkmäler</h2>
+            <div class="monuments-grid">
+                <!-- Albanische Denkmäler -->
+                <div class="monument-card butrint" data-country="albania">
+                    <img src="https://media.istockphoto.com/id/524508473/photo/amphitheater-of-the-ancient-baptistery-at-butrint-albania.jpg?s=612x612&w=0&k=20&c=u2HamVK7iL4Fq3hNYhdqt5GdBB4z3sxE4ScGVeE-sXE=" 
+                        alt="Butrint Archäologische Stätte" 
+                        class="monument-image">
+                    <h3>Butrint</h3>
+                    <p>Eine antike Stadt mit beeindruckenden Ruinen und reicher Geschichte.</p>
+                    <button class="learn-more">Mehr erfahren</button>
+                </div>
+
+                <div class="monument-card gjirokastra" data-country="albania">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/bb/dd/77/caption.jpg?w=1200&h=-1&s=1" 
+                        alt="Burg von Gjirokastra" 
+                        class="monument-image">
+                    <h3>Burg von Gjirokastra</h3>
+                    <p>Eine mittelalterliche Burg mit atemberaubendem Panoramablick.</p>
+                    <button class="learn-more">Mehr erfahren</button>
+                </div>
+
+                <!-- Deutsche Denkmäler -->
+                <div class="monument-card brandenburg" data-country="germany">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Brandenburger_Tor_abends.jpg/1200px-Brandenburger_Tor_abends.jpg" 
+                        alt="Brandenburger Tor" 
+                        class="monument-image">
+                    <h3>Brandenburger Tor</h3>
+                    <p>Das berühmteste Wahrzeichen Berlins und Symbol der deutschen Einheit.</p>
+                    <button class="learn-more">Mehr erfahren</button>
+                </div>
+
+                <div class="monument-card cologne" data-country="germany">
+                    <img src="https://static.toiimg.com/thumb/msid-40357582,width=1200,height=900/40357582.jpg" 
+                        alt="Kölner Dom" 
+                        class="monument-image">
+                    <h3>Kölner Dom</h3>
+                    <p>Eine beeindruckende gotische Kathedrale und UNESCO-Weltkulturerbe.</p>
+                    <button class="learn-more">Mehr erfahren</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2>Kulturelles Quiz</h2>
+                    <p>Testen Sie Ihr Wissen über deutsche und albanische Kulturdenkmäler</p>
+                </div>
+                <div class="question-container">
+                    <p class="question"></p>
+                    <div class="options"></div>
+                    <div class="feedback-message"></div>
+                </div>
+                <div class="quiz-controls">
+                    <div class="quiz-progress">
+                        <span class="progress-text">Frage <span class="current-question">1</span> von <span class="total-questions">5</span></span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    <button class="quiz-button" id="next-question">Nächste Frage</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="compare" class="compare-section">
+            <h2>Kultureller Vergleich</h2>
+            <div class="comparison-grid">
+                <div class="country-column">
+                    <h3>Deutschland</h3>
+                    <div class="comparison-content">
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-landmark"></i>Architektonische Vielfalt</h4>
+                            <p>Von gotischen Kathedralen bis zu neoklassizistischen Monumenten spiegelt die deutsche Architektur Jahrhunderte kultureller Evolution wider.</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-history"></i>Historische Bedeutung</h4>
+                            <p>Die deutschen Denkmäler sind Zeugen wichtiger historischer Ereignisse und symbolisieren oft die deutsche Einheit und Wiedervereinigung.</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-paint-brush"></i>Kulturelles Erbe</h4>
+                            <p>Die Monumente repräsentieren verschiedene Kunstepochen und zeigen den Einfluss unterschiedlicher kultureller Strömungen.</p>
+                        </div>
+                        <div class="comparison-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">51</div>
+                                <div class="stat-label">UNESCO-Welterbestätten</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">20K+</div>
+                                <div class="stat-label">Denkmalgeschützte Gebäude</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="country-column">
+                    <h3>Albanien</h3>
+                    <div class="comparison-content">
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-archway"></i>Antikes Erbe</h4>
+                            <p>Albanische Denkmäler vereinen Einflüsse verschiedener Zivilisationen, von den Illyrern über die Römer bis zu den Osmanen.</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-mountain"></i>Naturintegration</h4>
+                            <p>Viele albanische Monumente sind harmonisch in die natürliche Umgebung integriert und bieten spektakuläre Landschaftsausblicke.</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4><i class="fas fa-shield-alt"></i>Verteidigungsarchitektur</h4>
+                            <p>Burgen und Festungen zeugen von der strategischen Bedeutung Albaniens an der Schnittstelle verschiedener Kulturen.</p>
+                        </div>
+                        <div class="comparison-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">4</div>
+                                <div class="stat-label">UNESCO-Welterbestätten</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">2500+</div>
+                                <div class="stat-label">Kulturdenkmäler</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Über uns</h4>
+                <p>Entdecken Sie das kulturelle Erbe Deutschlands und Albaniens durch ihre bedeutendsten Denkmäler.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Schnelllinks</h4>
+                <a href="#monuments">Denkmäler</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#compare">Vergleich</a>
+            </div>
+            <div class="footer-section">
+                <h4>Folgen Sie uns</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kulturdenkmäler. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
